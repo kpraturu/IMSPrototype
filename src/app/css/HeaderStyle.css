@@ -6,6 +6,7 @@
 #navItem {
     color: #000000;
 }
+
 #navItem:hover {
     font-weight: bold;
 }

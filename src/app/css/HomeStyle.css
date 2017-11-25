@@ -1,0 +1,16 @@
+#imsTitle {
+    font-size: 4em;
+    text-align:center;
+    vertical-align: middle;
+    padding-top: 3em;
+}
+
+#advancedSearch {
+     border-left: 1px solid #333333;
+}
+
+#searchBar {
+    margin: 0 auto;
+    width: 30em;
+    padding-top: 5em;
+}
