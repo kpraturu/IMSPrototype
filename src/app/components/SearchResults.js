@@ -1,12 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-export class SearchResults extends React.Component {
+import {SearchBar} from "./SearchBar";
 
+export class SearchResults extends React.Component {
     render() {
         return (
             <div>
-                <h1>LOL</h1>
+                <SearchBar />
                 <h1>{this.props.searchString}</h1>
             </div>
         );
@@ -14,5 +15,5 @@ export class SearchResults extends React.Component {
 }
 
 SearchResults.propTypes = {
-    searchString: PropTypes.string,
+    searchString: PropTypes.string
 };

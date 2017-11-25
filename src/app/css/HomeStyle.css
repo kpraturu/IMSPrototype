@@ -5,12 +5,9 @@
     padding-top: 3em;
 }
 
-#advancedSearch {
-     border-left: 1px solid #333333;
-}
-
-#searchBar {
-    margin: 0 auto;
+#advancedHR {
+    height: 1px;
     width: 30em;
-    padding-top: 5em;
+    color: #333;
+    background-color: #333;
 }
