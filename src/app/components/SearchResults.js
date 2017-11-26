@@ -7,13 +7,21 @@ export class SearchResults extends React.Component {
     render() {
         return (
             <div>
-                <SearchBar />
-                <h1>{this.props.searchString}</h1>
+                <SearchBar barStyle={styles.searchBar} history={this.props[0].history}/>
+                <h1>{this.props[0].match.params.searchString}</h1>
             </div>
         );
     }
 }
 
 SearchResults.propTypes = {
-    searchString: PropTypes.string
+    searchString: PropTypes.string,
+    history: PropTypes.object
 };
+
+const styles = {};
+styles.searchBar = {
+    margin: '0 auto',
+    width: '30em',
+    paddingTop: '2em'
+}
