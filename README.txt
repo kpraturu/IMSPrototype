@@ -13,3 +13,5 @@ On initial download, run these commands at the top directory:
 
 To run the build version of this prototype, execute:
     npm start
+
+Project will be running on localhost:8080

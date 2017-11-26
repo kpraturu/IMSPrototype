@@ -10,7 +10,7 @@ export class Home extends React.Component {
         return (
             <div>
                 <h1 id="imsTitle">Inventory Management System</h1>
-                <SearchBar barStyle={styles.searchBar} history={this.props.history}/>
+                <SearchBar barStyle={styles.searchBar} placeholder="Search" history={this.props.history}/>
             </div>
         );
     }

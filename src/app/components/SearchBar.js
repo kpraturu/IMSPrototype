@@ -8,7 +8,7 @@ export class SearchBar extends React.Component {
     constructor() {
         super();
         this.state = {
-            advancedSection: (""),
+            advancedState: "asHidden",
             normalSearch: true,
             advancedButton: "glyphicon glyphicon-menu-down",
             searchString: ""
@@ -31,18 +31,13 @@ export class SearchBar extends React.Component {
     toggleSearch() {
         if (this.state.normalSearch) {
             this.setState({
-                advancedSection: (
-                    <div>
-                        <hr id="advancedHR"/>
-                        <AdvancedSearchOptions/>
-                    </div>
-                ),
+                advancedState: "asVisible",
                 normalSearch: false,
                 advancedButton: "glyphicon glyphicon-menu-up"
             });
         } else {
             this.setState({
-                advancedSection: (""),
+                advancedState: "asHidden",
                 normalSearch: true,
                 advancedButton: "glyphicon glyphicon-menu-down"
             });
@@ -54,7 +49,7 @@ export class SearchBar extends React.Component {
             <div>
                 <form onSubmit={(event) =>this.searchButtonClicked(event)}>
                     <div className="input-group" style={this.props.barStyle}>
-                      <input id="search" type="search" className="form-control transparent-input" placeholder="Search" onChange={(event) => this.onHandleSearchChange(event)}/>
+                      <input id="search" type="search" className="form-control transparent-input" placeholder={this.props.placeholder} onChange={(event) => this.onHandleSearchChange(event)}/>
                         <span className="input-group-btn">
                           <button id="submit" className="btn btn-secondary" type="button" onClick={(event) =>this.searchButtonClicked(event)}>
                               <span className="glyphicon glyphicon-search"></span>
@@ -65,7 +60,10 @@ export class SearchBar extends React.Component {
                         </span>
                     </div>
                 </form>
-                {this.state.advancedSection}
+                <div id={this.state.advancedState}>
+                    <hr id="advancedHR"/>
+                    <AdvancedSearchOptions/>
+                </div>
             </div>
         );
     }
@@ -73,5 +71,6 @@ export class SearchBar extends React.Component {
 
 SearchBar.propTypes = {
     barStyle: PropTypes.object,
+    placeholder: PropTypes.string,
     history: PropTypes.object
 };
